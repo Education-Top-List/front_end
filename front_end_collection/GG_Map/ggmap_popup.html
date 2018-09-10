@@ -1,0 +1,95 @@
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/jquery-ui.js" type="text/javascript"></script>
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.8.9/themes/blitzer/jquery-ui.css" rel="stylesheet" type="text/css" />
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyALzWqemVv_3dDXbtR9Jr7hHOh8rglgEmE&callback=initMap"></script>
+
+<style type="text/css">
+  
+   @keyframes jump {
+  0%   {transform: translate3d(0,0,0) scale3d(1,1,1);}
+  40%  {transform: translate3d(0,30%,0) scale3d(.7,1.5,1);}
+  100% {transform: translate3d(0,100%,0) scale3d(1.5,.7,1);}
+}
+.jump {
+  transform-origin: 50% 50%;
+  animation: jump .5s linear alternate infinite;
+}
+
+
+</style>
+
+<script type="text/javascript">
+  $(function () {
+    $("#btnShow").click(function () {
+      $("#dialog").dialog({
+        modal: true,
+        title: "Google Map",
+        width: 1600,
+        height: 800,
+
+        open: function () {
+          var mapOptions = {
+            center: new google.maps.LatLng(19.0606917, 72.83624970000005),
+            zoom: 16,
+            mapTypeId: google.maps.MapTypeId.ROADMAP
+          }
+          var map = new google.maps.Map($("#dvMap")[0], mapOptions);
+
+
+          var contentString = `<div class="occho"> 
+          <img src="http://www.anphatpc.com.vn/media/product/16397_0_mouse_fuhlen_g60_optical_usb___gaming.jpg" width="30" height="30" style="float:left;">
+          <ul style="list-style-type:none;"> 
+          <li><b> Phukienmt.esy.es </b> </li>
+          <li> Số 213 Tôn Đức Thắng</li>
+          <li> Đống Đa</li>
+          <li> Hà Nội, Việt Nam</li>
+          </ul>
+
+          </div>`;
+
+          var infowindow = new google.maps.InfoWindow({
+            content: contentString
+          });
+
+          var uluru = {lat: 21.024415, lng: 105.831316};
+
+          var marker = new google.maps.Marker({
+            position: uluru,
+            map: map,
+            title: 'Uluru (Ayers Rock)'
+          });
+
+          marker.addListener('mouseover',function() {
+            infowindow.open(map, marker);
+          });
+
+           google.maps.event.addListener(marker, 'mouseout', function() {
+                infowindow.close();
+            });
+
+          function myFunction() {
+            map.setCenter(uluru);
+           infowindow.open(map, marker);
+         }
+             // marker.addListener('click', function() {
+        //   infowindow.open(map, marker);
+        // });
+        myFunction();
+
+      }
+    });
+    });
+  });
+</script>
+<div>
+  <div><img src="https://maxcdn.icons8.com/Share/icon/Maps//marker1600.png" width="30" height="30" class="jump"></div>
+  <button id = "btnShow" type="button" class=" btn btn-success" style="padding: 10px;"> Show Map </button>
+</div>
+
+<div id="dialog" style="display: none">
+  <div id="dvMap" style="height: 800px; width: 1600px;">
+  </div>
+</div>
+

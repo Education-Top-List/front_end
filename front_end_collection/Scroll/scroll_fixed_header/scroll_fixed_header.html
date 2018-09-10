@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	.fixedheader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+}
+.fixedheader .text_header {
+	display: none;
+}
+.fixedheader .logo {
+	max-width: 80px;
+}
+</style>
+<body>
+
+<script type="text/javascript">
+	// SCROLL FIXED HEADER
+	jQuery(function() {
+		jQuery(window).scroll(function() {
+			var scroll = jQuery(window).scrollTop();
+			if (scroll >= 50) {
+				jQuery(".header").addClass("fixedheader");
+			} else {
+				jQuery("header").removeClass("fixedheader");
+				jQuery(".fixedheader .text_header").css({"display":"block"});
+				jQuery(".fixedheader .logo").css({"max-width":"initial"});
+			}
+		});
+	});
+</script>
+</body>
+</html>

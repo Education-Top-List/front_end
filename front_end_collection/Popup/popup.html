@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+	<title></title>
+	<style>
+	body{
+		font-family: 'Roboto', sans-serif;
+	}
+	.popup {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 99999;
+		background: rgba(0,0,0,0.3);
+		font-size: 15px;
+		display: none;
+	}
+	.popup .content_popup {
+		position: relative;
+		margin: 100px auto 0px auto;
+		z-index: 9;
+		width: 80%;
+		text-align: center;
+		transition: all 0.4s linear;
+		-o-transition: all 0.4s linear;
+		-ms-transition: all 0.4s linear;
+		-moz-transition: all 0.4s linear;
+		-webkit-transition: all 0.4s linear;
+		max-width: 300px;
+		background: #fff;
+		padding: 0px 0px 30px 0px;
+		max-width: 600px;
+		width: 100%;
+		border-radius: 5px;
+		animation-name: animatetop;
+		animation-duration: 0.4s;
+		z-index: 99999999;
+	}
+	.popup .content_popup .title {
+		font-size: 18px;
+		background: url(images/icon_noice.png) top center no-repeat;
+		padding-top: 70px;
+		margin-bottom: 15px;
+	}
+	.popup .close_popup {
+		font-size: 14px;
+		cursor: pointer;
+		color: #fff;
+		/* background: #ddba76; */
+		padding: 7px 15px;
+		text-transform: uppercase;
+		display: table;
+		margin: 0 auto;
+		clear: both;
+		position: absolute;
+		top: 5px;
+		right: 0px;
+		font-size: 20px;
+	}
+	.commit_popup{
+		background: #ffe6e6;
+		border: dashed 1px #ffa7a7;
+		padding: 15px;
+		text-align: center;
+		margin: 15px;
+	}
+	.commit_popup h3{
+		font-size: 20px;
+		margin: 0px;
+	}
+	.commit_popup span{
+		color: red;
+		font-size: 20px;
+	}
+	.commit_popup p{
+		margin: 10px 0px 0px 0px;
+		font-style: italic;
+		font-size: 18px;
+	}
+	.content_popup h1{
+		font-size: 22px;
+		text-transform: uppercase;
+		background: #1eaab8;
+		padding: 12px 0px 10px 0px;
+		color: #fff;
+		border-radius: 5px 5px 0px 0px;
+		margin: 0px;
+	}
+	.popup label {
+		display: block;
+		max-width: 100%;
+		margin-bottom: 5px;
+		font-weight: 700;
+		text-align: left;
+	}
+	.popup .form-control {
+		display: block;
+		width: 100%;
+		height: 34px;
+		font-size: 14px;
+		line-height: 1.42857143;
+		color: #555;
+		background-color: #fff;
+		background-image: none;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+		box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+		-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+		-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+		transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	}
+	.popup .list_group{
+		padding:0px 15px;
+	}
+	.popup  .form-group{
+		margin:15px 0px 0px 0px;
+	}
+	.mabaove .img_mabv{
+		float:left;
+	}
+	.mabaove input[type="text"]{
+		float: left;
+		width: initial;
+		min-width: 185px;
+		line-height: 10px;
+		height: 30px;
+		margin: 5px 0px 0px 10px;
+	}
+	.mabaove a.refresh{
+		float: left;
+		margin: 5px 0px 0px 20px;
+	}
+	.img_mabv img{
+		border:solid 1px #ccc;
+		border-radius: 5px;
+	}
+	.mabaove{
+		display: table;
+		width: 100%;
+	}
+	.popup .security{
+		border-bottom: 1px dashed #ccc;
+		padding: 0px 0px 15px 0px;
+	}
+
+	.popup button[type*="submit"]{
+		color: #fff;
+		background-color: #d9534f;
+		border: none;
+		border-radius: 20px;
+		padding: 13px 30px;
+		font-size: 16px;
+		margin: 20px 0px 0px 0px;
+		cursor:pointer;
+	}
+	.popup button[type*="submit"]:hover{
+		background:#1eaab8;
+	}
+
+	:hover, :focus {
+		outline:none !important;
+	}
+	/* Add Animation */
+	@-webkit-keyframes animatetop {
+		from {top:-300px; opacity:0} 
+		to {top:0; opacity:1}
+	}
+	@keyframes animatetop {
+		from {top:-300px; opacity:0}
+		to {top:0; opacity:1}
+	}
+
+</style>
+</head>
+<script
+src="https://code.jquery.com/jquery-3.3.1.js"
+integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+crossorigin="anonymous"></script>
+<body>
+	<!-- GIANG'S POPUP -->
+	<div class="popup">
+		<div class="content_popup">
+			<h1>thông tin đăng ký</h1>
+			<div class="commit_popup">
+				<h3><span>Miễn phí:</span> Bảo mật SSL + Website Template</h3>
+				<p>"Cam kết hoàn tiền nếu không tăng tốc độ"</p>
+			</div>
+			<div class="list_group phone_popup">
+				<div class="form-group">
+					<label>Số điện thoại:</label>
+					<input  type="text" class="form-control">
+				</div>
+				<div class="form-group mail_popup">
+					<label>Email:</label>
+					<input type="text" class="form-control">
+				</div>
+				<div class="form-group security">
+					<label class="title_capcha">Mã bảo vệ :</label>
+					<div class="mabaove">
+						<div class="img_mabv">
+							<img id="captchap" src="https://tenten.vn/Landing/show_captcha/?time=0.8812843261748455" alt="CAPTCHA Image" width="113">
+						</div>
+						<input type="text" class="form-control">
+						<a class="refresh" title="Click vào đây để đổi ảnh khác" href="#">
+							<img src="https://img.tenten.vn/k/lp/design-lovers-cloud/images/refresh.png">
+						</a>
+					</div>
+				</div>
+				<button type="submit"> Đăng ký ngay</button>
+				<div class="close_popup"><i class="fa fa-times" aria-hidden="true"></i></div>
+			</div> 
+		</div>
+	</div>
+	<button class="btn">click me</button>
+	<script>
+		jQuery(document).ready(function(){
+			jQuery(".btn").click(function(){
+				jQuery('.popup').stop(true,true).fadeIn('300').find('.close_popup').click(function(){jQuery('.popup').stop(true,true).fadeOut('300');
+			});
+				jQuery('.popup').find('.content_popup').show();
+			});
+		jQuery(document).click(function(event) {
+  //if you click on anything except the modal itself or the "open modal" link, close the modal
+  		if (!jQuery(event.target).closest(".content_popup,.btn").length) {
+  			jQuery("body").find(".content_popup").hide();
+  				jQuery(".popup").fadeOut(300);
+  			}
+		});
+		});
+	</script>
+</body>
+</html>

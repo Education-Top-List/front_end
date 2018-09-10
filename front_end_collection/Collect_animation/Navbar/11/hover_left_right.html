@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<style type="text/css">
+	.nav__primary{
+	position: relative;
+	float: right;
+	width: 100%;
+	/* padding-left: 25%; */
+	text-align: right;
+}
+
+.nav__primary ul{
+	text-align: center;
+	list-style-type: none; 
+}
+a{
+	text-decoration: none; 
+}
+.nav__primary ul li{
+	display: inline-block;
+	position: relative;
+	padding: 10px 14px;
+	/* border-right: 1px solid #ad4e9d; */
+}
+.nav__primary ul li:first-child {
+	padding-left: 0;
+}
+
+.nav__primary ul li a{
+    /* color: #fff; */
+    display: block;
+    /* padding: 32px 0; */
+    position: relative;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.nav__primary ul li a:before {
+	content: "";
+	position: absolute;
+	z-index: 0;
+	left: 50%;
+	right: 50%;
+	bottom: -5px;
+	background: #002157;
+	height: 2px;
+	-webkit-transition-property: left, right;
+	transition-property: left, right;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+	-webkit-transition-timing-function: ease-out;
+	transition-timing-function: ease-out;
+}
+.nav__primary > ul.sf-menu > li > a:hover{color: #002157;}
+.nav__primary > ul.sf-menu > li > a:hover:before, .nav__primary > ul.sf-menu > li > a:focus:before, .nav__primary > ul.sf-menu > li > a:active:before{
+	left: 0;
+	right: 0;
+}
+.nav__primary > ul.sf-menu > li.current-menu-item a{color: #002157;}
+.nav__primary > ul.sf-menu > li.current-menu-item > a:hover:before, .nav__primary > ul.sf-menu > li.current-menu-item > a:before{
+	left: 0;
+	right: 0;
+}
+.nav__primary ul li:last-child a{
+	border: none;
+}
+.nav__primary ul li:last-child {
+	padding-right: 0;
+	border: 0;
+}
+.nav__primary ul li:first-child:before {
+	/* content: ""; */
+	/* width: 14px; */
+	/* height: 14px; */
+	/* background: url('images/trangchu.png')no-repeat; */
+}
+.nav__primary ul.sf-menu li ul.sub-menu{
+    position: absolute;
+    width: 250px;
+    padding: 10px 0px;
+    background: #002157;
+    top: 150%;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 9999;
+    transition: all 0.3s linear 0s;
+    -o-transition: all 0.3s linear 0s;
+    -ms-transition: all 0.3s linear 0s;
+    -moz-transition: all 0.3s linear 0s;
+    -webkit-transition: all 0.3s linear 0s;
+    border-top: 1px solid #002157;
+    text-align: left;
+}
+.nav__primary ul.sf-menu li ul.sub-menu li{
+	width: 100%;
+}
+.nav__primary ul.sf-menu li:hover > ul.sub-menu{
+	top: 100%;
+	visibility: visible;
+	opacity: 1;
+}
+.nav__primary ul.sf-menu li ul.sub-menu li{
+	clear: both;
+    padding: 0;
+}
+.nav__primary ul.sf-menu li ul.sub-menu li a{
+	color: #fff;
+	font-size: 14px;
+	display: block;
+	padding: 8px 15px;
+	font-weight: normal;
+	text-transform: none;
+}
+.nav__primary ul.sf-menu li ul.sub-menu ul.sub-menu{
+	position: absolute;
+	left: 120%;
+	top: 0;
+}
+.nav__primary ul.sf-menu li ul.sub-menu li:hover ul.sub-menu{
+	left: 100%;
+	visibility: visible;
+	opacity: 1;
+}
+</style>
+<body>
+
+<nav class="nav nav__primary clearfix">
+
+<ul id="topnav" class="sf-menu"><li id="menu-item-40" class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-40"><a href="http://bdslongbien.crv.vn/">Trang chủ</a></li>
+<li id="menu-item-41" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-41"><a href="http://bdslongbien.crv.vn/category/tin-tuc-phong-thuy/">Tin tức – phong thủy</a></li>
+<li id="menu-item-39" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-39"><a href="http://bdslongbien.crv.vn/lien-he/">Liên hệ</a></li>
+</ul>
+</nav>
+</body>
+</html>

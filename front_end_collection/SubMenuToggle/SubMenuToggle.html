@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<style type="text/css">
+
+.col-md-3{
+    width: 25%;
+} 
+ul{
+    list-style-type: none;
+}
+.sidebar .menu li.menu-item-has-children::before {
+    content: "\f105";
+    font: normal normal normal 14px/1 FontAwesome;
+    position: absolute;
+    right: 10px;
+    top: 13px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #f07519;
+}
+.editBefore::before {
+    content: "\f107" !important;
+}
+.sidebar .menu li a {
+    font-size: 13px;
+    line-height: 30px;
+    text-transform: uppercase;
+    display: block;
+    padding: 5px 5px 5px 10px;
+    border-bottom: 1px solid #e6e6e6;
+    position: relative;
+    color: #000;
+}
+.sidebar .menu li{
+        position: relative;
+}
+.sidebar .menu ul.sub-menu{
+    padding: 0px 0px 0px 20px;
+    border-bottom: 1px solid #e6e6e6;
+}
+.sidebar .menu>li:last-child a, .sidebar .menu>li ul.sub-menu>li:last-child  a {
+        border-bottom: 0px;
+}
+</style>
+</head>
+<body>
+ <div class="col-xs-12 col-md-3 sidebar" id="sidebar-left">
+   <div id="creativecate-3" class="visible-all-devices dmsanpham  widget">
+      <div class="title_widget"><span>Danh mục sản phẩm</span></div>
+      <ul id="menu-menu-dich-vu-tieng-viet" class="menu">
+         <li id="menu-item-234" class="menu-item menu-item-type-taxonomy menu-item-object-dichvu_category menu-item-has-children menu-item-234">
+            <a href="http://elite.crv.vn/dichvu_category/dv-so-huu-tri-tue/">Dịch vụ sở hữu trí tuệ</a>
+            <ul class="sub-menu" style="display: none;">
+               <li id="menu-item-238" class="menu-item menu-item-type-taxonomy menu-item-object-dichvu_category menu-item-has-children menu-item-238">
+                  <a href="http://elite.crv.vn/dichvu_category/viet-nam/">Việt Nam</a>
+                  <ul class="sub-menu" style="display: none;">
+                     <li id="menu-item-236" class="menu-item menu-item-type-taxonomy menu-item-object-dichvu_category menu-item-236"><a href="http://elite.crv.vn/dichvu_category/lao/">Lào</a></li>
+                     <li id="menu-item-237" class="menu-item menu-item-type-taxonomy menu-item-object-dichvu_category menu-item-237"><a href="http://elite.crv.vn/dichvu_category/my-an-ma/">My- an- ma</a></li>
+                  </ul>
+               </li>
+               <li id="menu-item-235" class="menu-item menu-item-type-taxonomy menu-item-object-dichvu_category menu-item-235"><a href="http://elite.crv.vn/dichvu_category/campuchia/">Campuchia</a></li>
+            </ul>
+         </li>
+         <li id="menu-item-239" class="menu-item menu-item-type-taxonomy menu-item-object-dichvu_category menu-item-239">
+            <a href="http://elite.crv.vn/dichvu_category/dv-phap-ly-kinh-doanh/">Dịch vụ về pháp lý kinh doanh</a>
+            <ul class="sub-menu" style="display: none;">
+               <li id="menu-item-238" class="menu-item menu-item-type-taxonomy menu-item-object-dichvu_category menu-item-has-children menu-item-238">
+                  <a href="http://elite.crv.vn/dichvu_category/viet-nam/">Việt Nam</a>
+                  <ul class="sub-menu" style="display: none;">
+                     <li id="menu-item-236" class="menu-item menu-item-type-taxonomy menu-item-object-dichvu_category menu-item-236"><a href="http://elite.crv.vn/dichvu_category/lao/">Lào</a></li>
+                     <li id="menu-item-237" class="menu-item menu-item-type-taxonomy menu-item-object-dichvu_category menu-item-237"><a href="http://elite.crv.vn/dichvu_category/my-an-ma/">My- an- ma</a></li>
+                  </ul>
+               </li>
+               <li id="menu-item-235" class="menu-item menu-item-type-taxonomy menu-item-object-dichvu_category menu-item-235"><a href="http://elite.crv.vn/dichvu_category/campuchia/">Campuchia</a></li>
+            </ul>
+        </li>
+      </ul>
+   </div>
+</div>
+
+<script type="text/javascript">
+	
+           // SHOW HIDE SUB MENU CATEGORY
+           // SHOW MENU 1
+        jQuery('.menu li>ul.sub_menu').hide();       
+        jQuery('.menu').children().has('ul.sub-menu').click(function(){
+            jQuery(this).children('ul').slideToggle();
+            jQuery('.menu').children().not(this).has('ul.sub-menu').find('ul.sub-menu').slideUp();
+        }).children('ul').children().click(function(event){event.stopPropagation()});
+        jQuery('.menu').children().find('ul.sub-menu').children().has('ul.sub-menu').click(function(){
+            jQuery(this).find('ul.sub-menu').slideToggle();
+        });
+        jQuery('.menu li').has('ul.sub-menu').click(function(event){
+            jQuery(this).toggleClass('editBefore');
+            event.preventDefault();
+        });
+        jQuery('.menu').children().has('ul.sub-menu').addClass('menu-item-has-children');
+     	jQuery('.menu li').click(function(){
+              		$(this).addClass('active').siblings().removeClass('active');
+              	});
+            </script>
+        </body>
+        </html>

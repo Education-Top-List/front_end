@@ -1,0 +1,128 @@
+
+.col-md-4{
+	width: 30%;
+	float: left;
+	padding: 0px 15px;
+	text-align: center;
+}
+h2{
+	text-align: center;
+	margin: 0px 0px 40px 0px !important;
+	font-size: 40px !important;
+	color: #d427bd !important;
+	text-transform: uppercase;
+}
+.title{
+	margin:50px 0px;
+}
+body{
+	font-family: 'Lobster', cursive !important;
+}
+[class*="row"]{
+		max-width: 1200px;
+	margin:0px auto 40px auto;
+	display: table;
+	width: 100%
+}
+/* row1 */
+.anm_1 img:hover{
+	-webkit-animation-name: hvr-icon-rotate;
+	animation-name: hvr-icon-rotate;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+}
+.anm_2 img:hover{
+	-webkit-animation-name: hvr-icon-scale;
+	animation-name: hvr-icon-scale;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+}
+.anm_3 img:hover{
+	-webkit-animation-name: hvr-icon-rotatev;
+	animation-name: hvr-icon-rotatev;
+	-webkit-animation-duration: 1s;
+	animation-duration: 1s;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+}
+
+
+@-webkit-keyframes hvr-icon-rotate {
+	50% {
+		-webkit-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+
+	100% {
+		-webkit-transform: rotateY(360deg);
+		transform: rotateY(360deg);
+	}
+}
+
+@keyframes hvr-icon-scale {
+	50% {
+		-webkit-transform: rotateY(180deg);
+		-moz-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+	100% {
+		-webkit-transform: rotateY(360deg);
+		-moz-transform: rotateY(360deg);
+		transform: rotateY(360deg);
+	}
+}
+
+@-webkit-keyframes hvr-icon-rotatev {
+	25% {
+		-webkit-transform: rotateZ(40deg);
+		transform: rotateZ(40deg);
+	}
+
+	75% {
+		-webkit-transform: rotateZ(-40deg);
+		transform: rotateZ(-40deg);
+	}
+}
+
+@keyframes hvr-icon-rotatev {
+	25% {
+		-webkit-transform: rotateZ(40deg);
+		-moz-transform: rotateZ(40deg);
+		transform: rotateZ(40deg);
+	}
+
+	75% {
+		-webkit-transform: rotateZ(-40deg);
+		-moz-transform: rotateZ(-40deg);
+		transform: rotateZ(-40deg);
+	}
+}
+
+
+@-webkit-keyframes hvr-icon-scale {
+	25% {
+		-webkit-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+
+	75% {
+		-webkit-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+}
+
+@keyframes hvr-icon-scale {
+	25% {
+		-webkit-transform: scale(1.1);
+		-moz-transform: scale(1.1);
+		transform: scale(1.1);
+	}
+
+	75% {
+		-webkit-transform: scale(0.9);
+		-moz-transform: scale(0.9);
+		transform: scale(0.9);
+	}
+}

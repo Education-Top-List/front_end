@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	.container{
+		max-width: 1170px;
+		margin: 0px auto;
+	}
+	.container:after{
+		clear: both;
+		content:"";
+		display: block;
+	}
+	.container:before{
+		display: table;  
+		content:"";
+	}
+	body{
+		margin:0px;
+		padding:0px;
+	}
+	.menu{
+		list-style-type: none;
+		margin:0px;
+		width: 80%;
+		padding:0px ;
+		float:left;
+	}
+	.menu li{
+		text-decoration: none;
+		float:left;
+	}
+	.menu li a{
+		display: block;
+		padding:8px 15px;
+		text-transform: uppercase;
+		background:#ff0000;
+		color:#fff; 
+		text-decoration: none;
+	}
+	.r_header{
+		float: left;
+		width: 20%;
+	}
+	.nav_menu{
+		background:#ff0000;
+		overflow:auto;
+	}
+	.search{
+		padding: 5px;
+		border: none;
+		border-radius: 5px;
+		margin: 5px 0px;
+		background:#ff0000;
+		transition: all 0.7s ease;
+		width: 0px;
+	}
+	.search_form:hover .search{
+		background:#fff;
+		width: 150px;
+	}
+</style>
+</head>
+<body>
+	<header>
+		<div class="nav_menu">
+			<div class="container">
+				<ul class="menu">
+					<li><a href="">Trang chu</a></li>
+					<li><a href="">Gioi thieu</a></li>
+					<li><a href="">San pham</a></li>
+					<li><a href="">Tin Tuc</a></li>
+					<li><a href="">Lien he</a></li>
+				</ul>
+				<div class="r_header">
+					<div class="search_form">
+						<input type="text" name="" placeholder="Ban can tim gi...." class="search">
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+</body>
+</html>

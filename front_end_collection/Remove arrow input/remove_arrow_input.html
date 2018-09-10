@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+      /*REMOVE  */
+              select {
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                text-indent: 1px;
+                text-overflow: '';
+            }
+            input[type*="date"]::-webkit-inner-spin-button,
+            input[type*="date"]::-webkit-calendar-picker-indicator {
+                display: none;
+                -webkit-appearance: none;
+            }
+
+        /* CHANGE ICON INPUT TYPE DATE STRANGE TO ICON CALENDATE */
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            color: rgba(0, 0, 0, 0);
+            opacity: 1;
+            display: block;
+            background: url(images/icon_calendar.png) center center no-repeat;
+            width: 20px;
+            height: 20px;
+            border-width: thin;
+        }
+</style>
+</head>
+<body>
+	<input type="date" name="">
+	<input type="number">
+</body>
+</html>
