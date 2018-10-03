@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+	.list_click li{
+    float:left;
+    padding:10px;
+    cursor: pointer;
+    background:blue;
+    color:#fff;
+    margin:0px 10px 0px 0px;
+  }
+  p span, .change_content ul li {
+    display: none;
+  }
+  .change_content ul li{
+    color:#fff;
+    padding:10px;
+    background:red;
+  }
+  .current{
+    display: block !important;
+  }
+  ul{
+    list-style:none;
+  }
+	</style>
+</head>
+<body>
+  <p>
+    <span class="current">Tiêu đề 1</span>
+    <span>Tiêu đề 2</span>
+    <span>Tiêu đề 3</span>
+    <span>Tiêu đề 4</span>
+    Đã được thay đổi thành công
+</p>
+  <div class="change_content">
+    <ul>
+      <li class="current">Nội dung 1</li>
+      <li>Nội dung 2</li>
+      <li>Nội dung 3</li>
+      <li>Nội dung 4</li>
+    </ul>
+  </div>
+  <div class="list_click">
+    <ul>
+      <li>Div click 1</li>
+      <li>Div click 2</li>
+      <li>Div click 3</li>
+      <li>Div click 4</li>
+    </ul>
+  </div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+    <script>
+      jQuery('.list_click ul>li').click(function(){
+          var index_li = jQuery(this).index() + 1;
+          var index_nth_li = ':nth-child' + '(' +  index_li + ')';
+          jQuery('p>span'+ index_nth_li).addClass('current').siblings().removeClass('current');
+          jQuery('.change_content ul>li'+ index_nth_li).addClass('current').siblings().removeClass('current');
+      });
+  </script>
+</body>
+</html>
