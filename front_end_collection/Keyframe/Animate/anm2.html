@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+    .animation--fade-bg {
+  width: 500px;
+  height: 500px;
+  background-size: cover;
+  background-position: 50%;
+  background-repeat: no-repeat;
+   
+  animation-duration: 8s;
+  animation-name: fade-bg;
+  animation-delay: 0;
+  animation-iteration-count: infinite;
+  animation-direction: forward;
+
+}
+
+@keyframes fade-bg {
+    0% {
+        opacity: 0;
+        background-image: url('http://i.imgur.com/sRnvs0K.jpg');
+    }
+    
+    25% {
+        opacity: 1;
+        background-image: url('http://i.imgur.com/sRnvs0K.jpg');
+    }
+    
+    50% {
+        opacity: 0;
+        background-image: url('http://i.imgur.com/sRnvs0K.jpg');
+    }
+    
+    51% {
+        opacity: 0;
+        background-image: url('http://i.imgur.com/wL4RT1w.jpg');
+    }
+    
+    75% {
+        opacity: 1;
+        background-image: url('http://i.imgur.com/wL4RT1w.jpg');
+    }
+    
+    100% {
+        opacity: 0;
+        background-image: url('http://i.imgur.com/wL4RT1w.jpg');
+    }
+}
+
+	</style>
+</head>
+<body>
+<div class="animation--fade-bg"></div>
+</body>
+</html>
