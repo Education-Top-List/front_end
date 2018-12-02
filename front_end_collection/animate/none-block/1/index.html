@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style>
+		* {
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 50px;
+}
+
+.paragraph {
+  flex: 0 0 100%;
+}
+
+.button {
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  text-align: center;
+  padding: 1em;
+  background: none;
+  box-shadow: none;
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+.button:focus {
+  outline: none;
+}
+
+.button--disapear {
+  display: none;
+}
+.button--disapear.active {
+  animation: scale-display 0.3s;
+  display: inline-flex;
+}
+.button--disapear.out {
+  animation: scale-display--reversed 0.3s;
+  animation-fill-mode: forwards;
+  display: inline-flex;
+}
+
+@keyframes scale-display {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes scale-display--reversed {
+  0% {
+    display: inline-flex;
+    opacity: 1;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  99% {
+    display: inline-flex;
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  100% {
+    display: none;
+    opacity: 0;
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+}
+	</style>
+</head>
+<body>
+	<div class="parent">
+
+<p class="paragraph">Here you will witness the power of CSS animation
+</p>
+
+<div class="wrapper">
+<button class=" button button--disapear">Click Me, and see me vanish</button>
+<button class=" button button--trigger">Click Me to show</button>
+</div>
+ </div>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+<script>
+	$('.button--trigger').on('click', function(e) {
+  $('.button--disapear').show();
+  $('.button--disapear').removeClass('out').addClass('active');
+});
+
+$('.button--disapear').on('click', function(e) {
+  $(this).removeClass('active').addClass('out');
+
+			setTimeout(function(){
+				$('.button--disapear').hide() 
+			}, 300); //Same time as animation
+});
+</script>
+</body>
+</html>
